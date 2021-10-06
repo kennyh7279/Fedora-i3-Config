@@ -39,16 +39,17 @@ Since nearly everyone seems to default to xfce applications on top of their tili
 ---
 ## Alternative WM (Qt)
 (essentially ending up with lxqt - panel + tiling windows)
-### Replacements
-- pcmanfm-qt replaces thunar
-- featherpad replaces mousepad
-- qterminal replaces rxvt-unicode
 ### Installs
 - lxqt-archiver (archive manager)
 - dnfdragora (optional: package management)
 - kvantum (theme changer (may require additional settings))
 - lximage-qt (image viewer)
 - okular (document viwer)
+
+### Replacements
+- pcmanfm-qt replaces thunar
+- featherpad replaces mousepad
+- qterminal replaces rxvt-unicode
 
 `sudo dnf -y install dunst volumeicon dnfdragora dnfdragora-updater blueberry rofi lxqt-archiver kvantum lximage-qt okular polybar nitrogen pcmanfm-qt featherpad kitty`
 
