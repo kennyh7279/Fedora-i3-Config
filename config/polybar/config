@@ -1,0 +1,151 @@
+;=================================
+; Global
+;=================================
+
+[global/wm]
+margin-top = 0
+margin-bottom = 0
+
+;=================================
+; Bars
+;=================================
+
+[bar/master]
+; bar/master handles options relating to both bars
+width = 100%
+height = 29
+;offset-x = 1%
+;offset-y = 1%
+radius = 0
+fixed-center = true
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+line-size = 2
+line-color = #f00
+
+border-size = 0
+border-color = #00000000
+
+padding-left = 2
+padding-right = 2
+
+module-margin-left = 1
+module-margin-right = 2
+
+font-0 = Overpass:pixelsize=10;0
+font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
+font-2 = siji:pixelsize=10;1
+
+wm-restack = i3
+
+override-redirect = false
+
+scroll-up = i3wm-wsnext
+scroll-down = i3wm-wsprev
+
+cursor-scroll = ns-resize
+cursor-click = pointer
+
+modules-left = i3
+modules-center = xwindow
+
+[bar/primary]
+; bar for the primary monitor
+inherit = bar/master
+monitor = DisplayPort-0
+
+modules-right = wlan pulseaudio date
+
+tray-position = right
+tray-padding = 6
+tray-background = ${colors.background}
+;tray-offset-x =
+
+[bar/secondary]
+; bar for the secondary monitor
+inherit = bar/master
+monitor = HDMI-A-0
+
+;=================================
+; Theme / Colors
+;=================================
+
+[colors]
+background = #282a36
+background-alt = #44475a
+foreground = #f8f8f2
+foreground-alt = #555
+primary = #ffb52a
+secondary = #e60053
+alert = #ff5555
+
+; Dracula
+comment = #627a4
+selection = #44475a
+cyan = #8be9fd
+green = #50fa7b
+orange = #ffb86c
+pink = #ff79c6
+purple = #bd93f9
+red = #ff5555
+yellow = #f1fa8c
+
+;=================================
+; Modules
+;=================================
+
+[module/i3]
+type = internal/i3
+pin-workspaces = true
+strip-wsnumbers = true
+index-sort = true
+enable-click = true
+enable-scroll = false
+wrapping-scroll = false
+reverse-scroll = false
+fuzzy-match = true
+
+label-focused = %name%
+label-focused-background = ${colors.background}
+label-focused-underline= ${colors.pink}
+label-focused-padding = 4
+
+label-unfocused-padding = 4
+
+label-occupied = %name%
+label-occupied-padding = 4
+
+label-urgent = %name%!
+label-urgent-background = ${colors.red}
+label-urgent-padding = 4
+
+label-empty = %name%
+label-empty-foreground = ${colors.foreground}
+label-empty-padding = 4
+
+;label-separator = ^
+
+;==================================================
+
+[module/xwindow]
+type = internal/xwindow
+label = %title%
+label-maxlen = 250
+
+;==================================================
+
+[module/date]
+type = internal/date
+interval = 5
+
+date = " %d-%m-%Y"
+
+time = %I:%M
+
+format-prefix = 󱑇
+format-prefix-foreground = ${colors.foreground}
+format-underline = ${colors.purple}
+
+label = %time% %date%
